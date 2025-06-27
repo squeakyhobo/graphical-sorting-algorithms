@@ -3,21 +3,22 @@ import java.util.Arrays;
 
 
 
-public class SelectionSort {
+public class SelectionSort extends Sort {
 
-    Graph panel;
-    Sound soundEffects = new Sound();
+    
 
     
     
     public SelectionSort(Graph panel){
-        this.panel = panel;
+        super(panel);
     }
 
+    @Override
     public void sort(int[] nums){
         System.out.println(Arrays.toString(nums));
         for(int i = 0;i <nums.length;i++){
             panel.currentIndex = i;
+            
             
             int smallestIndex =i;
             for(int j =i+1;j<nums.length;j++){
@@ -50,11 +51,5 @@ public class SelectionSort {
 
     }
 
-    public void sleep(int millis){
-        try{
-            Thread.sleep(millis);
-        }
-
-        catch(Exception e){}
-    }
+   
 }
